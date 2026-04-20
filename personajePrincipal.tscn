@@ -2,6 +2,52 @@
 
 [ext_resource type="Script" uid="uid://co3jund4344ro" path="res://principal.gd" id="1_iif2l"]
 [ext_resource type="Texture2D" uid="uid://vt7cqnrkv3sm" path="res://assets/quieto.png" id="2_ly8xe"]
+[ext_resource type="Texture2D" uid="uid://c242faltiytlh" path="res://assets/caer.png" id="2_x6jj0"]
+[ext_resource type="Texture2D" uid="uid://dqsofp51ary7l" path="res://assets/run1.png" id="3_x8o80"]
+[ext_resource type="Texture2D" uid="uid://cfth6gua1w4mu" path="res://assets/run2 .png" id="4_jvfe4"]
+[ext_resource type="Texture2D" uid="uid://b4e4w2d3djlv1" path="res://assets/run3.png" id="5_x6jj0"]
+[ext_resource type="Texture2D" uid="uid://cwxtoa7h1m16y" path="res://assets/subir.png" id="7_v4qd8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4qd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x6jj0")
+}],
+"loop": true,
+"name": &"caer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ly8xe")
+}],
+"loop": true,
+"name": &"quieto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x8o80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jvfe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x6jj0")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_v4qd8")
+}],
+"loop": true,
+"name": &"subir",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
 size = Vector2(33, 91)
@@ -9,10 +55,11 @@ size = Vector2(33, 91)
 [node name="personajePrincipal" type="CharacterBody2D" unique_id=948534728]
 script = ExtResource("1_iif2l")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1819098555]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=249410655]
 position = Vector2(0, 3.9339066e-06)
 scale = Vector2(0.3675, 0.46626797)
-texture = ExtResource("2_ly8xe")
+sprite_frames = SubResource("SpriteFrames_v4qd8")
+animation = &"caer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=482051356]
 shape = SubResource("RectangleShape2D_57bpn")

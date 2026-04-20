@@ -2,15 +2,19 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -300.0
 var direccionViendo = "right"
 var bala_scene = preload("res://empuje.tscn")
 var balaActiva = null
+
+func _ready() -> void:
+	$Sprite2D.play("quieto")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -22,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		controlDireccionViendo(direction)
 		velocity.x = direction * SPEED
+		$Sprite2D.play("run");
 		if balaActiva != null:
 			if balaActiva.getDireccion() == direccionViendo:
 				balaActiva.position.x += velocity.x  * delta
@@ -29,6 +34,7 @@ func _physics_process(delta: float) -> void:
 				balaActiva.queue_free()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$Sprite2D.play("quieto");
 
 	move_and_slide()
 
