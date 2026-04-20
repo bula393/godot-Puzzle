@@ -9,6 +9,7 @@ var balaActiva = null
 
 func _ready() -> void:
 	$Sprite2D.play("quieto")
+	$Sprite2D.z_index = 10 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("left", "right")
 	if direction:
 		controlDireccionViendo(direction)
 		velocity.x = direction * SPEED
@@ -31,9 +32,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		if velocity.y < 0:
 			$Sprite2D.play("subir")
-	elif direction:
+	elif direction :
 		$Sprite2D.play("run")
-	else:
+	elif balaActiva == null:
 		$Sprite2D.play("quieto")
 
 	move_and_slide()
@@ -58,6 +59,7 @@ func _input(event: InputEvent) -> void:
 		get_parent().add_child(balaActiva)
 		balaActiva.setModo("empujar")
 		calcularposition(balaActiva)
+		$Sprite2D.play("empuje")
 		await get_tree().create_timer(0.5).timeout
 		if balaActiva != null:
 			balaActiva.queue_free()
@@ -66,6 +68,7 @@ func _input(event: InputEvent) -> void:
 		get_parent().add_child(balaActiva)
 		balaActiva.setModo("atraer")
 		calcularposition(balaActiva)
+		$Sprite2D.play("empuje")
 		await get_tree().create_timer(0.5).timeout
 		if balaActiva != null:
 			balaActiva.queue_free()
@@ -74,6 +77,7 @@ func _input(event: InputEvent) -> void:
 func calcularposition(balaActiva : Area2D) -> void:
 	var tamañoSumar = $CollisionShape2D.shape.get_rect().size.x / 2 + balaActiva.get_node("CollisionShape2D").shape.get_rect().size.x / 2
 	var posicionSalida  = global_position
+	posicionSalida.y -= 15
 	if direccionViendo == "left":
 		posicionSalida.x -= tamañoSumar 
 	elif direccionViendo == "right":
@@ -85,3 +89,8 @@ func calcularposition(balaActiva : Area2D) -> void:
 
 
 	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free() # Elimina el objeto para ahorrar recursos
+	print("YOU WIN" + name)
