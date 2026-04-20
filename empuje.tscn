@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c7vmor1rquj7o"]
+
+[ext_resource type="Script" uid="uid://clh10683qx08v" path="res://aire.gd" id="1_ab6fm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rm757"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krfyn"]
+size = Vector2(79, 24)
+
+[node name="Area2D" type="Area2D" unique_id=574186696]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_ab6fm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1512706280]
+position = Vector2(0, 2.9802322e-08)
+scale = Vector2(78.50001, 22.999996)
+texture = SubResource("CanvasTexture_rm757")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2075253641]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_krfyn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

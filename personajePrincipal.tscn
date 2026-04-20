@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dn14b3fkaw588"]
+
+[ext_resource type="Script" uid="uid://co3jund4344ro" path="res://principal.gd" id="1_iif2l"]
+[ext_resource type="Texture2D" uid="uid://vt7cqnrkv3sm" path="res://assets/quieto.png" id="2_ly8xe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
+size = Vector2(33, 91)
+
+[node name="personajePrincipal" type="CharacterBody2D" unique_id=948534728]
+script = ExtResource("1_iif2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1819098555]
+position = Vector2(0, 3.9339066e-06)
+scale = Vector2(0.3675, 0.46626797)
+texture = ExtResource("2_ly8xe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=482051356]
+shape = SubResource("RectangleShape2D_57bpn")
