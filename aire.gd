@@ -5,6 +5,10 @@ var Modo
 
 func setDireccion(dir : String) -> void:
 	direccion = dir
+	if dir == "left":
+		$Sprite2D.flip_h = true
+	else :
+		$Sprite2D.flip_h = false
 
 func getDireccion() -> String:
 	return direccion

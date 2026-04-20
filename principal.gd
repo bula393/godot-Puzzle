@@ -26,17 +26,22 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		controlDireccionViendo(direction)
 		velocity.x = direction * SPEED
-		$Sprite2D.play("run");
-		if balaActiva != null:
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if not is_on_floor():
+		if velocity.y < 0:
+			$Sprite2D.play("subir")
+	elif direction:
+		$Sprite2D.play("run")
+	else:
+		$Sprite2D.play("quieto")
+
+	move_and_slide()
+	if balaActiva != null and velocity.x != 0:
 			if balaActiva.getDireccion() == direccionViendo:
 				balaActiva.position.x += velocity.x  * delta
 			else:
 				balaActiva.queue_free()
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		$Sprite2D.play("quieto");
-
-	move_and_slide()
 
 
 func controlDireccionViendo(direccion : float)-> void:

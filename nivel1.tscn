@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://br2kjnq0gb4fs" path="res://nivel_1.gd" id="1_hbxap"]
 [ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://personajePrincipal.tscn" id="3_cotxi"]
 [ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://objeto.gd" id="4_cotxi"]
+[ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="5_57bpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iicca"]
 texture = ExtResource("1_dbkrs")
@@ -15,10 +16,8 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 255
 sources/0 = SubResource("TileSetAtlasSource_iicca")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_cotxi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
-size = Vector2(34, 36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_k88cc"]
+radius = 39.623226
 
 [node name="Node2D" type="Node2D" unique_id=1229528155]
 script = ExtResource("1_hbxap")
@@ -39,10 +38,10 @@ collision_mask = 13
 script = ExtResource("4_cotxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=652010049]
-position = Vector2(1.9073486e-06, 1.0000091)
-scale = Vector2(35.5, 35.999985)
-texture = SubResource("CanvasTexture_cotxi")
+position = Vector2(385.68753, -19.20449)
+scale = Vector2(0.33892858, 0.34370205)
+texture = ExtResource("5_57bpn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1468348010]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_57bpn")
+position = Vector2(391, -18)
+shape = SubResource("CircleShape2D_k88cc")
