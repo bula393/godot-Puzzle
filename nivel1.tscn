@@ -2,12 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://pixil-frame-0.png" id="1_dbkrs"]
 [ext_resource type="Script" uid="uid://br2kjnq0gb4fs" path="res://nivel_1.gd" id="1_hbxap"]
+[ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="2_k88cc"]
 [ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://personajePrincipal.tscn" id="3_cotxi"]
 [ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://objeto.gd" id="4_cotxi"]
 [ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="5_57bpn"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
-size = Vector2(151.42862, 134.2857)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iicca"]
 texture = ExtResource("1_dbkrs")
@@ -19,6 +17,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 255
 sources/0 = SubResource("TileSetAtlasSource_iicca")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
+size = Vector2(151.42862, 134.2857)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k88cc"]
 size = Vector2(138, 111)
 
@@ -26,23 +27,11 @@ size = Vector2(138, 111)
 size = Vector2(150.76921, 113.84613)
 
 [node name="game" type="Node2D" unique_id=1229528155]
+position = Vector2(-1, 0)
 script = ExtResource("1_hbxap")
 
-[node name="CharacterBody2D4" type="CharacterBody2D" parent="." unique_id=284020983]
+[node name="CharacterBody2D4" parent="." unique_id=88218382 instance=ExtResource("2_k88cc")]
 position = Vector2(501, 590)
-collision_layer = 4
-collision_mask = 13
-script = ExtResource("4_cotxi")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D4" unique_id=80273961]
-position = Vector2(-3.921875, -1.329254)
-scale = Vector2(0.24044651, 0.24383296)
-texture = ExtResource("5_57bpn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D4" unique_id=1691575245]
-position = Vector2(0.5, -1.5)
-scale = Vector2(0.35, 0.35)
-shape = SubResource("RectangleShape2D_57bpn")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=887120541]
 position = Vector2(61, 5)
@@ -71,7 +60,7 @@ scale = Vector2(0.35, 0.35)
 shape = SubResource("RectangleShape2D_57bpn")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1488685662]
-position = Vector2(1128, 564)
+position = Vector2(1074, 564)
 collision_layer = 4
 collision_mask = 13
 script = ExtResource("4_cotxi")
