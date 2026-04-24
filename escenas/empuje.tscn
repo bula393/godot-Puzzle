@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn4v1gbl22bux" path="res://assets/fuerza.png" id="2_62yxm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krfyn"]
-size = Vector2(186, 37.5)
+size = Vector2(216.25, 37.5)
 
 [node name="Area2D" type="Area2D" unique_id=574186696]
 collision_layer = 8

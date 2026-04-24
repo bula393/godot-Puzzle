@@ -16,7 +16,7 @@ func abrir_puerta():
 	var tween = create_tween().set_parallel(true)
 	var duracion = 10.0 / 60.0
 	tween.tween_property($Sprite2D, "scale:y", 0.0, duracion)
-	tween.tween_property($CollisionShape2D, "scale:y", 0.0, duracion)
+	tween.tween_property($CollisionShape2D.shape, "size:y", 0.0, duracion)
 	tween.tween_property($Sprite2D, "position:y", original_pos_y - (sprite_height / 2), duracion)
 	tween.tween_property($CollisionShape2D, "position:y", original_pos_y - (sprite_height / 2), duracion)
 
@@ -24,7 +24,7 @@ func cerrar_puerta():
 	var tween = create_tween().set_parallel(true)
 	var duracion = 10.0 / 60.0
 	tween.tween_property($Sprite2D, "scale:y", original_scale_y, duracion)
-	tween.tween_property($CollisionShape2D, "scale:y", original_scale_y, duracion)
+	tween.tween_property($CollisionShape2D.shape, "size:y", sprite_height, duracion)
 	tween.tween_property($Sprite2D, "position:y", original_pos_y, duracion)
 	tween.tween_property($CollisionShape2D, "position:y", original_pos_y, duracion)
 

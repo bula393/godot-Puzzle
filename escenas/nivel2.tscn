@@ -1,13 +1,12 @@
 [gd_scene format=4 uid="uid://dvea2og0uhjdh"]
 
-[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://escenas/pixil-frame-0.png" id="1_7h3xd"]
+[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://pixil-frame-0.png" id="1_7h3xd"]
 [ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://escenas/personajePrincipal.tscn" id="2_ho4ip"]
 [ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="3_8acea"]
 [ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://scripts/objeto.gd" id="4_1883r"]
 [ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="5_wtc5o"]
-[ext_resource type="Script" uid="uid://ccb1w5awafrr5" path="res://escenas/palanca.gd" id="6_1883r"]
-[ext_resource type="Script" uid="uid://lap6dgoyi8t8" path="res://escenas/puerta.gd" id="6_wtc5o"]
-[ext_resource type="Texture2D" uid="uid://dfgwd2rttrqvj" path="res://assets/palancaA.png" id="8_4uxp8"]
+[ext_resource type="PackedScene" uid="uid://c7wf5gtbe2pa6" path="res://escenas/puerta.tscn" id="6_wtc5o"]
+[ext_resource type="PackedScene" uid="uid://dpvjrkhyquo1q" path="res://escenas/palanca.tscn" id="7_4uxp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86ce0"]
 texture = ExtResource("1_7h3xd")
@@ -25,14 +24,6 @@ sources/1 = SubResource("TileSetAtlasSource_8acea")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
 size = Vector2(54, 92)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_8acea"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1883r"]
-size = Vector2(23, 79)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8acea"]
-size = Vector2(26, 41)
 
 [node name="Nivel2" type="Node2D" unique_id=436286450]
 
@@ -61,33 +52,11 @@ texture = ExtResource("5_wtc5o")
 position = Vector2(14, -26)
 shape = SubResource("RectangleShape2D_57bpn")
 
-[node name="PUERTA" type="StaticBody2D" parent="." unique_id=944849709]
+[node name="PUERTA" parent="." unique_id=1389496322 instance=ExtResource("6_wtc5o")]
 position = Vector2(787, 552)
-script = ExtResource("6_wtc5o")
-
-[node name="Sprite2D" type="Sprite2D" parent="PUERTA" unique_id=1841646244]
-position = Vector2(-0.7500019, -1.9073486e-06)
-scale = Vector2(22.5, 82.00001)
-texture = SubResource("CanvasTexture_8acea")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PUERTA" unique_id=839079111]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_1883r")
 
 [node name="CharacterBody2D6" parent="." unique_id=886640591 instance=ExtResource("3_8acea")]
 position = Vector2(321, 458)
 
-[node name="PALANCA" type="StaticBody2D" parent="." unique_id=444268015]
+[node name="PALANCA" parent="." unique_id=1961857350 instance=ExtResource("7_4uxp8")]
 position = Vector2(0, -47)
-collision_layer = 16
-collision_mask = 7
-script = ExtResource("6_1883r")
-
-[node name="Sprite2D" type="Sprite2D" parent="PALANCA" unique_id=516749659]
-position = Vector2(64.5, 361.50003)
-scale = Vector2(2.0625, 2.0625)
-texture = ExtResource("8_4uxp8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PALANCA" unique_id=1032953872]
-position = Vector2(59, 359.5)
-shape = SubResource("RectangleShape2D_8acea")

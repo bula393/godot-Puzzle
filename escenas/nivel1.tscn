@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br2kjnq0gb4fs" path="res://scripts/nivel_1.gd" id="1_jjnph"]
 [ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="2_joimm"]
-[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://escenas/pixil-frame-0.png" id="3_w1egi"]
+[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://pixil-frame-0.png" id="3_w1egi"]
 [ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://escenas/personajePrincipal.tscn" id="4_kkmol"]
 [ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://scripts/objeto.gd" id="5_orta5"]
 [ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="6_47yg7"]

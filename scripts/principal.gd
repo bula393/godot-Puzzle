@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -350.0
 var direccionViendo = "right"
 var bala_scene = preload("res://escenas/empuje.tscn")
 var balaActiva = null
+var gravedad = true
 
 func _ready() -> void:
 	$Sprite2D.play("quieto")
@@ -13,7 +14,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and gravedad:
 		velocity += get_gravity() * delta
 		
 
@@ -87,6 +88,11 @@ func calcularposition(balaActiva : Area2D) -> void:
 			
 			
 
+func apagarGravedad() -> void:
+	gravedad = false
+
+func encenderGravedad() -> void:
+	gravedad = true
 
 	
 
@@ -94,3 +100,6 @@ func calcularposition(balaActiva : Area2D) -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free() 
 	print("YOU WIN" + name)
+
+
+	

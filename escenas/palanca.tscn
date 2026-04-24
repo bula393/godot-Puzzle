@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dpvjrkhyquo1q"]
+
+[ext_resource type="Script" uid="uid://ccb1w5awafrr5" path="res://scripts/palanca.gd" id="1_h8xrq"]
+[ext_resource type="Texture2D" uid="uid://dfgwd2rttrqvj" path="res://assets/palancaA.png" id="2_vb1u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8acea"]
+size = Vector2(26, 41)
+
+[node name="PALANCA" type="StaticBody2D" unique_id=1961857350]
+collision_layer = 16
+collision_mask = 7
+script = ExtResource("1_h8xrq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=774472462]
+position = Vector2(64.5, 361.50003)
+scale = Vector2(2.0625, 2.0625)
+texture = ExtResource("2_vb1u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1147058339]
+position = Vector2(59, 359.5)
+shape = SubResource("RectangleShape2D_8acea")
