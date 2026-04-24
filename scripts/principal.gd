@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 var direccionViendo = "right"
-var bala_scene = preload("res://empuje.tscn")
+var bala_scene = preload("res://escenas/empuje.tscn")
 var balaActiva = null
 
 func _ready() -> void:
@@ -92,5 +92,5 @@ func calcularposition(balaActiva : Area2D) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free() # Elimina el objeto para ahorrar recursos
+	queue_free() 
 	print("YOU WIN" + name)

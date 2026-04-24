@@ -1,0 +1,91 @@
+[gd_scene format=4 uid="uid://f4fqg8didpjd"]
+
+[ext_resource type="Script" uid="uid://br2kjnq0gb4fs" path="res://scripts/nivel_1.gd" id="1_jjnph"]
+[ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="2_joimm"]
+[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://escenas/pixil-frame-0.png" id="3_w1egi"]
+[ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://escenas/personajePrincipal.tscn" id="4_kkmol"]
+[ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://scripts/objeto.gd" id="5_orta5"]
+[ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="6_47yg7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iicca"]
+texture = ExtResource("3_w1egi")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_hbxap"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 255
+sources/0 = SubResource("TileSetAtlasSource_iicca")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
+size = Vector2(151.42862, 134.2857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k88cc"]
+size = Vector2(138, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm00u"]
+size = Vector2(150.76921, 113.84613)
+
+[node name="game" type="Node2D" unique_id=1229528155]
+position = Vector2(-1, 0)
+script = ExtResource("1_jjnph")
+
+[node name="CharacterBody2D4" parent="." unique_id=88218382 instance=ExtResource("2_joimm")]
+position = Vector2(501, 590)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=887120541]
+position = Vector2(61, 5)
+tile_map_data = PackedByteArray("AAAAACYAAAAAAAAAAAABACYAAAAAAAAAAAACACYAAAAAAAAAAAADACYAAAAAAAAAAAAEACYAAAAAAAAAAAAFACYAAAAAAAAAAAAGACYAAAAAAAAAAAAHACYAAAAAAAAAAAAIACYAAAAAAAAAAAAJACYAAAAAAAAAAAAKACYAAAAAAAAAAAALACYAAAAAAAAAAAAMACYAAAAAAAAAAAANACYAAAAAAAAAAAAOACYAAAAAAAAAAAAPACYAAAAAAAAAAAAQACYAAAAAAAAAAAARACYAAAAAAAAAAAASACYAAAAAAAAAAAATACYAAAAAAAAAAAAUACYAAAAAAAAAAAAVACYAAAAAAAAAAAAWACYAAAAAAAAAAAAXACYAAAAAAAAAAAAYACYAAAAAAAAAAAAZACYAAAAAAAAAAAAaACYAAAAAAAAAAAAbACYAAAAAAAAAAAAcACYAAAAAAAAAAAAdACYAAAAAAAAAAAAeACYAAAAAAAAAAAAfACYAAAAAAAAAAAAgACYAAAAAAAAAAAAhACYAAAAAAAAAAAAiACYAAAAAAAAAAAAjACYAAAAAAAAAAAAkACYAAAAAAAAAAAAlACYAAAAAAAAAAAAmACYAAAAAAAAAAAAnACYAAAAAAAAAAAAoACYAAAAAAAAAAAAoACcAAAAAAAAAAAApACcAAAAAAAAAAAAqACcAAAAAAAAAAAArACcAAAAAAAAAAAAsACcAAAAAAAAAAAAtACcAAAAAAAAAAAAuACcAAAAAAAAAAAAvACcAAAAAAAAAAAAwACcAAAAAAAAAAAAxACcAAAAAAAAAAAAyACcAAAAAAAAAAAAzACcAAAAAAAAAAAA0ACYAAAAAAAAAAAA1ACYAAAAAAAAAAAA2ACYAAAAAAAAAAAA3ACYAAAAAAAAAAAA4ACYAAAAAAAAAAAA5ACYAAAAAAAAAAAA6ACYAAAAAAAAAAAA7ACYAAAAAAAAAAAA8ACcAAAAAAAAAAAA9ACcAAAAAAAAAAAA+ACcAAAAAAAAAAAA/ACcAAAAAAAAAAAA/ACYAAAAAAAAAAABAACYAAAAAAAAAAABBACYAAAAAAAAAAABCACYAAAAAAAAAAABDACYAAAAAAAAAAABEACYAAAAAAAAAAABFACYAAAAAAAAAAABGACYAAAAAAAAAAABHACYAAAAAAAAAAABIACYAAAAAAAAAAABJACYAAAAAAAAAAABKACYAAAAAAAAAAABLACYAAAAAAAAAAABMACYAAAAAAAAAAABNACYAAAAAAAAAAABOACYAAAAAAAAAAABPACYAAAAAAAAAAAA+ACYAAAAAAAAAAAA9ACYAAAAAAAAAAAA8ACYAAAAAAAAAAAAzACYAAAAAAAAAAAAvACYAAAAAAAAAAAAuACYAAAAAAAAAAAAtACYAAAAAAAAAAAAsACYAAAAAAAAAAAArACYAAAAAAAAAAAAqACYAAAAAAAAAAAApACYAAAAAAAAAAAAwACYAAAAAAAAAAAAxACYAAAAAAAAAAAAyACYAAAAAAAAAAAD//yYAAAAAAAAAAAD//yUAAAAAAAAAAAD+/yQAAAAAAAAAAAD+/yMAAAAAAAAAAAD+/yIAAAAAAAAAAAD+/yEAAAAAAAAAAAD+/yAAAAAAAAAAAAD+/x8AAAAAAAAAAAD//yAAAAAAAAAAAAD//yEAAAAAAAAAAAD//yIAAAAAAAAAAAD//yMAAAAAAAAAAAD//yQAAAAAAAAAAAD+/x4AAAAAAAAAAAD+/x0AAAAAAAAAAAD+/xwAAAAAAAAAAAD+/xsAAAAAAAAAAAD+/xoAAAAAAAAAAAD+/xkAAAAAAAAAAAD//xsAAAAAAAAAAAD//xwAAAAAAAAAAAD//x0AAAAAAAAAAAD//x4AAAAAAAAAAAD//x8AAAAAAAAAAABEABkAAAAAAAAAAABEABgAAAAAAAAAAABEABcAAAAAAAAAAABEABYAAAAAAAAAAABEABUAAAAAAAAAAABEABQAAAAAAAAAAABEABMAAAAAAAAAAABEABIAAAAAAAAAAABEABEAAAAAAAAAAABFABEAAAAAAAAAAABFABAAAAAAAAAAAABFAA8AAAAAAAAAAABFAA4AAAAAAAAAAABFAA0AAAAAAAAAAABFAAwAAAAAAAAAAABEAAwAAAAAAAAAAABEAA0AAAAAAAAAAABEAA4AAAAAAAAAAABEAA8AAAAAAAAAAABEABAAAAAAAAAAAABFAAsAAAAAAAAAAABDABkAAAAAAAAAAABDABgAAAAAAAAAAABDABYAAAAAAAAAAABDABUAAAAAAAAAAABDABQAAAAAAAAAAABDABMAAAAAAAAAAABDABIAAAAAAAAAAABDABcAAAAAAAAAAABDABEAAAAAAAAAAABDABAAAAAAAAAAAABDAA8AAAAAAAAAAABDAA4AAAAAAAAAAABDAA0AAAAAAAAAAABDAAwAAAAAAAAAAABDAAsAAAAAAAAAAABEAAsAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_hbxap")
+
+[node name="personajePrincipal" parent="." unique_id=948534728 instance=ExtResource("4_kkmol")]
+position = Vector2(776, 562)
+collision_layer = 8
+collision_mask = 5
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=1566802559]
+position = Vector2(653, 591)
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("5_orta5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=153563198]
+position = Vector2(-3.921875, -1.329254)
+scale = Vector2(0.24044651, 0.24383296)
+texture = ExtResource("6_47yg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=2032868940]
+position = Vector2(0.5, -1.5)
+scale = Vector2(0.35, 0.35)
+shape = SubResource("RectangleShape2D_57bpn")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1488685662]
+position = Vector2(1074, 564)
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("5_orta5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=652010049]
+position = Vector2(-15.578131, 1.7271051)
+scale = Vector2(0.62044644, 0.6291848)
+texture = ExtResource("6_47yg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1468348010]
+position = Vector2(-6, -4.5)
+shape = SubResource("RectangleShape2D_k88cc")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="." unique_id=1488986474]
+position = Vector2(576, 581)
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("5_orta5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D3" unique_id=1518263081]
+position = Vector2(-2.5000134, -1.4366722)
+scale = Vector2(0.43142858, 0.43750483)
+texture = ExtResource("6_47yg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3" unique_id=310232123]
+position = Vector2(4, -7)
+scale = Vector2(0.65, 0.65)
+shape = SubResource("RectangleShape2D_bm00u")

@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://f4fqg8didpjd"]
 
-[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://pixil-frame-0.png" id="1_dbkrs"]
-[ext_resource type="Script" uid="uid://br2kjnq0gb4fs" path="res://nivel_1.gd" id="1_hbxap"]
-[ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="2_k88cc"]
-[ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://personajePrincipal.tscn" id="3_cotxi"]
-[ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://objeto.gd" id="4_cotxi"]
-[ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="5_57bpn"]
+[ext_resource type="Script" uid="uid://br2kjnq0gb4fs" path="res://scripts/nivel_1.gd" id="1_jjnph"]
+[ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="2_joimm"]
+[ext_resource type="Texture2D" uid="uid://y8sg5vsfft7" path="res://escenas/pixil-frame-0.png" id="3_w1egi"]
+[ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://escenas/personajePrincipal.tscn" id="4_kkmol"]
+[ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://scripts/objeto.gd" id="5_orta5"]
+[ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="6_47yg7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iicca"]
-texture = ExtResource("1_dbkrs")
+texture = ExtResource("3_w1egi")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
@@ -28,9 +28,9 @@ size = Vector2(150.76921, 113.84613)
 
 [node name="game" type="Node2D" unique_id=1229528155]
 position = Vector2(-1, 0)
-script = ExtResource("1_hbxap")
+script = ExtResource("1_jjnph")
 
-[node name="CharacterBody2D4" parent="." unique_id=88218382 instance=ExtResource("2_k88cc")]
+[node name="CharacterBody2D4" parent="." unique_id=88218382 instance=ExtResource("2_joimm")]
 position = Vector2(501, 590)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=887120541]
@@ -38,7 +38,7 @@ position = Vector2(61, 5)
 tile_map_data = PackedByteArray("AAAAACYAAAAAAAAAAAABACYAAAAAAAAAAAACACYAAAAAAAAAAAADACYAAAAAAAAAAAAEACYAAAAAAAAAAAAFACYAAAAAAAAAAAAGACYAAAAAAAAAAAAHACYAAAAAAAAAAAAIACYAAAAAAAAAAAAJACYAAAAAAAAAAAAKACYAAAAAAAAAAAALACYAAAAAAAAAAAAMACYAAAAAAAAAAAANACYAAAAAAAAAAAAOACYAAAAAAAAAAAAPACYAAAAAAAAAAAAQACYAAAAAAAAAAAARACYAAAAAAAAAAAASACYAAAAAAAAAAAATACYAAAAAAAAAAAAUACYAAAAAAAAAAAAVACYAAAAAAAAAAAAWACYAAAAAAAAAAAAXACYAAAAAAAAAAAAYACYAAAAAAAAAAAAZACYAAAAAAAAAAAAaACYAAAAAAAAAAAAbACYAAAAAAAAAAAAcACYAAAAAAAAAAAAdACYAAAAAAAAAAAAeACYAAAAAAAAAAAAfACYAAAAAAAAAAAAgACYAAAAAAAAAAAAhACYAAAAAAAAAAAAiACYAAAAAAAAAAAAjACYAAAAAAAAAAAAkACYAAAAAAAAAAAAlACYAAAAAAAAAAAAmACYAAAAAAAAAAAAnACYAAAAAAAAAAAAoACYAAAAAAAAAAAAoACcAAAAAAAAAAAApACcAAAAAAAAAAAAqACcAAAAAAAAAAAArACcAAAAAAAAAAAAsACcAAAAAAAAAAAAtACcAAAAAAAAAAAAuACcAAAAAAAAAAAAvACcAAAAAAAAAAAAwACcAAAAAAAAAAAAxACcAAAAAAAAAAAAyACcAAAAAAAAAAAAzACcAAAAAAAAAAAA0ACYAAAAAAAAAAAA1ACYAAAAAAAAAAAA2ACYAAAAAAAAAAAA3ACYAAAAAAAAAAAA4ACYAAAAAAAAAAAA5ACYAAAAAAAAAAAA6ACYAAAAAAAAAAAA7ACYAAAAAAAAAAAA8ACcAAAAAAAAAAAA9ACcAAAAAAAAAAAA+ACcAAAAAAAAAAAA/ACcAAAAAAAAAAAA/ACYAAAAAAAAAAABAACYAAAAAAAAAAABBACYAAAAAAAAAAABCACYAAAAAAAAAAABDACYAAAAAAAAAAABEACYAAAAAAAAAAABFACYAAAAAAAAAAABGACYAAAAAAAAAAABHACYAAAAAAAAAAABIACYAAAAAAAAAAABJACYAAAAAAAAAAABKACYAAAAAAAAAAABLACYAAAAAAAAAAABMACYAAAAAAAAAAABNACYAAAAAAAAAAABOACYAAAAAAAAAAABPACYAAAAAAAAAAAA+ACYAAAAAAAAAAAA9ACYAAAAAAAAAAAA8ACYAAAAAAAAAAAAzACYAAAAAAAAAAAAvACYAAAAAAAAAAAAuACYAAAAAAAAAAAAtACYAAAAAAAAAAAAsACYAAAAAAAAAAAArACYAAAAAAAAAAAAqACYAAAAAAAAAAAApACYAAAAAAAAAAAAwACYAAAAAAAAAAAAxACYAAAAAAAAAAAAyACYAAAAAAAAAAAD//yYAAAAAAAAAAAD//yUAAAAAAAAAAAD+/yQAAAAAAAAAAAD+/yMAAAAAAAAAAAD+/yIAAAAAAAAAAAD+/yEAAAAAAAAAAAD+/yAAAAAAAAAAAAD+/x8AAAAAAAAAAAD//yAAAAAAAAAAAAD//yEAAAAAAAAAAAD//yIAAAAAAAAAAAD//yMAAAAAAAAAAAD//yQAAAAAAAAAAAD+/x4AAAAAAAAAAAD+/x0AAAAAAAAAAAD+/xwAAAAAAAAAAAD+/xsAAAAAAAAAAAD+/xoAAAAAAAAAAAD+/xkAAAAAAAAAAAD//xsAAAAAAAAAAAD//xwAAAAAAAAAAAD//x0AAAAAAAAAAAD//x4AAAAAAAAAAAD//x8AAAAAAAAAAABEABkAAAAAAAAAAABEABgAAAAAAAAAAABEABcAAAAAAAAAAABEABYAAAAAAAAAAABEABUAAAAAAAAAAABEABQAAAAAAAAAAABEABMAAAAAAAAAAABEABIAAAAAAAAAAABEABEAAAAAAAAAAABFABEAAAAAAAAAAABFABAAAAAAAAAAAABFAA8AAAAAAAAAAABFAA4AAAAAAAAAAABFAA0AAAAAAAAAAABFAAwAAAAAAAAAAABEAAwAAAAAAAAAAABEAA0AAAAAAAAAAABEAA4AAAAAAAAAAABEAA8AAAAAAAAAAABEABAAAAAAAAAAAABFAAsAAAAAAAAAAABDABkAAAAAAAAAAABDABgAAAAAAAAAAABDABYAAAAAAAAAAABDABUAAAAAAAAAAABDABQAAAAAAAAAAABDABMAAAAAAAAAAABDABIAAAAAAAAAAABDABcAAAAAAAAAAABDABEAAAAAAAAAAABDABAAAAAAAAAAAABDAA8AAAAAAAAAAABDAA4AAAAAAAAAAABDAA0AAAAAAAAAAABDAAwAAAAAAAAAAABDAAsAAAAAAAAAAABEAAsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_hbxap")
 
-[node name="personajePrincipal" parent="." unique_id=948534728 instance=ExtResource("3_cotxi")]
+[node name="personajePrincipal" parent="." unique_id=948534728 instance=ExtResource("4_kkmol")]
 position = Vector2(776, 562)
 collision_layer = 8
 collision_mask = 5
@@ -47,12 +47,12 @@ collision_mask = 5
 position = Vector2(653, 591)
 collision_layer = 4
 collision_mask = 13
-script = ExtResource("4_cotxi")
+script = ExtResource("5_orta5")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2" unique_id=153563198]
 position = Vector2(-3.921875, -1.329254)
 scale = Vector2(0.24044651, 0.24383296)
-texture = ExtResource("5_57bpn")
+texture = ExtResource("6_47yg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=2032868940]
 position = Vector2(0.5, -1.5)
@@ -63,12 +63,12 @@ shape = SubResource("RectangleShape2D_57bpn")
 position = Vector2(1074, 564)
 collision_layer = 4
 collision_mask = 13
-script = ExtResource("4_cotxi")
+script = ExtResource("5_orta5")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=652010049]
 position = Vector2(-15.578131, 1.7271051)
 scale = Vector2(0.62044644, 0.6291848)
-texture = ExtResource("5_57bpn")
+texture = ExtResource("6_47yg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1468348010]
 position = Vector2(-6, -4.5)
@@ -78,12 +78,12 @@ shape = SubResource("RectangleShape2D_k88cc")
 position = Vector2(576, 581)
 collision_layer = 4
 collision_mask = 13
-script = ExtResource("4_cotxi")
+script = ExtResource("5_orta5")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D3" unique_id=1518263081]
 position = Vector2(-2.5000134, -1.4366722)
 scale = Vector2(0.43142858, 0.43750483)
-texture = ExtResource("5_57bpn")
+texture = ExtResource("6_47yg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3" unique_id=310232123]
 position = Vector2(4, -7)
