@@ -7,6 +7,17 @@ var direccionViendo = "right"
 var bala_scene = preload("res://escenas/empuje.tscn")
 var balaActiva = null
 var gravedad = true
+var disparando = false
+
+func getDir() -> int:
+	if direccionViendo == "right":
+		return 1
+	elif direccionViendo == "left":
+		return -1
+	return 0
+
+func disparar() -> void:
+	disparando = !disparando
 
 func _ready() -> void:
 	$Sprite2D.play("quieto")
@@ -55,26 +66,27 @@ func controlDireccionViendo(direccion : float)-> void:
 		$Sprite2D.flip_h = true
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("empuje") and balaActiva == null:
-		balaActiva = bala_scene.instantiate()
-		get_parent().add_child(balaActiva)
-		balaActiva.setModo("empujar")
-		calcularposition(balaActiva)
-		$Sprite2D.play("empuje")
-		await get_tree().create_timer(0.5).timeout
-		if balaActiva != null:
-			balaActiva.queue_free()
-	if event.is_action_pressed("atraer") and balaActiva == null:
-		balaActiva = bala_scene.instantiate()
-		get_parent().add_child(balaActiva)
-		balaActiva.setModo("atraer")
-		calcularposition(balaActiva)
-		$Sprite2D.play("empuje")
-		await get_tree().create_timer(0.5).timeout
-		if balaActiva != null:
-			balaActiva.queue_free()
+	if !disparando:	
+		if event.is_action_pressed("empuje") and balaActiva == null:
+			balaActiva = bala_scene.instantiate()
+			get_parent().add_child(balaActiva)
+			balaActiva.setModo("empujar")
+			calcularposition(balaActiva)
+			$Sprite2D.play("empuje")
+			await get_tree().create_timer(0.5).timeout
+			if balaActiva != null:
+				balaActiva.queue_free()
+		if event.is_action_pressed("atraer") and balaActiva == null:
+			balaActiva = bala_scene.instantiate()
+			get_parent().add_child(balaActiva)
+			balaActiva.setModo("atraer")
+			calcularposition(balaActiva)
+			$Sprite2D.play("empuje")
+			await get_tree().create_timer(0.5).timeout
+			if balaActiva != null:
+				balaActiva.queue_free()
 
-			
+				
 func calcularposition(balaActiva : Area2D) -> void:
 	var tamañoSumar = $CollisionShape2D.shape.get_rect().size.x / 2 + balaActiva.get_node("CollisionShape2D").shape.get_rect().size.x / 2
 	var posicionSalida  = global_position
@@ -85,8 +97,8 @@ func calcularposition(balaActiva : Area2D) -> void:
 		posicionSalida.x +=  tamañoSumar 
 	balaActiva.global_position = posicionSalida
 	balaActiva.setDireccion(direccionViendo)
-			
-			
+		
+		
 
 func apagarGravedad() -> void:
 	gravedad = false

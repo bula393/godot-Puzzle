@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://escenas/personajePrincipal.tscn" id="3_s5ixl"]
 [ext_resource type="PackedScene" uid="uid://c7wf5gtbe2pa6" path="res://escenas/puerta.tscn" id="4_s5ixl"]
 [ext_resource type="PackedScene" uid="uid://dpvjrkhyquo1q" path="res://escenas/palanca.tscn" id="5_evt0n"]
-[ext_resource type="Script" uid="uid://dlu2rmenvtmdc" path="res://scripts/corriente.gd" id="7_1fbyc"]
-[ext_resource type="Texture2D" uid="uid://bn4v1gbl22bux" path="res://assets/fuerza.png" id="8_vbirm"]
+[ext_resource type="PackedScene" uid="uid://fyuf01qf6jy7" path="res://escenas/corriente.tscn" id="7_317x8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evt0n"]
 texture = ExtResource("1_vq7wq")
@@ -20,9 +19,6 @@ sources/0 = SubResource("TileSetAtlasSource_evt0n")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
 size = Vector2(151.42862, 180.00006)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fbyc"]
-size = Vector2(96, 395)
 
 [node name="Nivel3" type="Node2D" unique_id=713126206]
 
@@ -55,20 +51,5 @@ position = Vector2(952, 75)
 [node name="PALANCA" parent="." unique_id=1961857350 instance=ExtResource("5_evt0n")]
 position = Vector2(-14, -283)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=574186696]
+[node name="Area2D" parent="." unique_id=1699721361 instance=ExtResource("7_317x8")]
 position = Vector2(359, 597)
-collision_layer = 32
-collision_mask = 5
-script = ExtResource("7_1fbyc")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1512706280]
-position = Vector2(-9.999979, -0.50000095)
-scale = Vector2(0.19101122, 0.1416309)
-texture = ExtResource("8_vbirm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2075253641]
-position = Vector2(-86, -142.5)
-shape = SubResource("RectangleShape2D_1fbyc")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

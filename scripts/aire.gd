@@ -32,9 +32,10 @@ func getDireccionOrientacion() -> int:
 func _on_body_entered(body: Node2D) -> void:
 		if body is CharacterBody2D and body.get_collision_layer_value(3):
 			body.velocity.x = getDireccionOrientacion() * velocidad * verModo()
-		if body is StaticBody2D and body.get_collision_layer_value(5):
+		elif body is StaticBody2D and body.get_collision_layer_value(5):
 			body.setCerrar()
-			
 
 
-	
+func _on_area_entered(area: Area2D) -> void:
+		if area.get_collision_layer_value(8):
+			area.activarbomb()

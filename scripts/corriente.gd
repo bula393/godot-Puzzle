@@ -13,11 +13,11 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("entro")
 	if body is CharacterBody2D and (body.get_collision_layer_value(1) or body.get_collision_layer_value(3)):
 		body.velocity.y = -400
 		body.apagarGravedad()
 
 
 func _on_body_exited(body: Node2D) -> void:
-	body.encenderGravedad()
+	if body is CharacterBody2D: 
+		body.encenderGravedad()
