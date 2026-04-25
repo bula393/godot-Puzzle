@@ -37,5 +37,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-		if area.get_collision_layer_value(8):
+		if !get_parent().get_node("PALANCA").getCerrar() and area.get_collision_layer_value(8):
 			area.activarbomb()

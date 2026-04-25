@@ -136,7 +136,7 @@ shape = SubResource("RectangleShape2D_cepkt")
 [node name="Area2D3" type="Area2D" parent="." unique_id=1640052031]
 position = Vector2(71, 198)
 collision_layer = 128
-collision_mask = 268
+collision_mask = 264
 script = ExtResource("7_urj1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D3" unique_id=480679795]

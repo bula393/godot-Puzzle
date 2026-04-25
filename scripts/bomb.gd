@@ -28,6 +28,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.get_collision_layer_value(3) or body.get_collision_layer_value(9) and disparado:
+	if  body.get_collision_layer_value(9) and disparado:
 		body.queue_free()
 		queue_free()
