@@ -110,8 +110,12 @@ func encenderGravedad() -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free() 
-	print("YOU WIN" + name)
+	if Global.nivelActual < 5:
+		var p = Global.getNivel(Global.getNivelSiguienteActual())
+		print(p)
+		get_tree().change_scene_to_file(p)
+	else :
+		print("estas en el ultimo nivel")
 
 
 	

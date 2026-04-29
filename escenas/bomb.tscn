@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dwakkpww5gdmo"]
+
+[ext_resource type="Script" uid="uid://dup2bikv5w0va" path="res://scripts/bomb.gd" id="1_hk80p"]
+[ext_resource type="Texture2D" uid="uid://veyavoucau1s" path="res://assets/bomb.png" id="2_8u3da"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb5wc"]
+size = Vector2(47, 55)
+
+[node name="Area2D3" type="Area2D" unique_id=427134132]
+collision_layer = 128
+collision_mask = 264
+script = ExtResource("1_hk80p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=150808115]
+position = Vector2(2, 5)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_8u3da")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436732743]
+position = Vector2(1.5, 5.5)
+shape = SubResource("RectangleShape2D_wb5wc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bqkw520f5ekh6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5nnxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfymb"]
+size = Vector2(31, 146)
+
+[node name="muro" type="StaticBody2D" unique_id=1244498058]
+collision_layer = 257
+collision_mask = 128
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=528883962]
+position = Vector2(3.0000472, -12.500004)
+scale = Vector2(29.99999, 147)
+texture = SubResource("CanvasTexture_5nnxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1122068744]
+position = Vector2(2.5, -12)
+shape = SubResource("RectangleShape2D_gfymb")

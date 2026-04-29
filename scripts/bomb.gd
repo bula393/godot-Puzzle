@@ -16,14 +16,16 @@ func _physics_process(delta: float) -> void:
 	if activar and !disparado:
 		position = get_parent().get_node("personajePrincipal").global_position
 		position.x += 50 * get_parent().get_node("personajePrincipal").getDir()
-	elif activar and disparado:
+	elif disparado:
 		position.x += delta * velocity.x
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("disparar"):
-		disparado = true
-		velocity.x = 100 * get_parent().get_node("personajePrincipal").getDir()
-		get_parent().get_node("personajePrincipal").disparar()
+		if activar:	
+			disparado = true
+			activar = false
+			velocity.x = 100 * get_parent().get_node("personajePrincipal").getDir()
+			get_parent().get_node("personajePrincipal").disparar()
 	
 
 

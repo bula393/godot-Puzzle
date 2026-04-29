@@ -15,6 +15,10 @@ run/main_scene="uid://f4fqg8didpjd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bt2o0ihptems8"
+
 [input]
 
 empuje={
