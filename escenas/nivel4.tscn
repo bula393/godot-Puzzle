@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8o75x2y58pu4" path="res://escenas/roca.tscn" id="6_7ohyq"]
 [ext_resource type="PackedScene" uid="uid://bqkw520f5ekh6" path="res://escenas/muro.tscn" id="6_urj1t"]
 [ext_resource type="PackedScene" uid="uid://dwakkpww5gdmo" path="res://escenas/bomb.tscn" id="7_cepkt"]
+[ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="9_u660k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqpg4"]
 texture = ExtResource("1_b01l2")
@@ -116,6 +117,12 @@ shape = SubResource("RectangleShape2D_cepkt")
 
 [node name="Area2D3" parent="." unique_id=427134132 instance=ExtResource("7_cepkt")]
 position = Vector2(71, 198)
+
+[node name="Control" parent="." unique_id=672239327 instance=ExtResource("9_u660k")]
+offset_left = 71.0
+offset_top = 71.0
+offset_right = 71.0
+offset_bottom = 71.0
 
 [editable path="Area2D2"]
 [editable path="CharacterBody2D4"]

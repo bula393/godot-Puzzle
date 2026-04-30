@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dcr4gjdy8hr6h"]
+
+[ext_resource type="Script" uid="uid://p5e7tro6coya" path="res://scripts/reinicio.gd" id="1_mk0v6"]
+[ext_resource type="Texture2D" uid="uid://drtvfpr203uh" path="res://assets/reiniciar.png" id="2_aat4d"]
+
+[node name="Control" type="Control" unique_id=672239327]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_mk0v6")
+
+[node name="Button" type="Button" parent="." unique_id=1856075280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -22.0
+offset_right = 20.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1691116390]
+position = Vector2(-1.2500116, 1.7499882)
+scale = Vector2(0.102539025, 0.102539025)
+texture = ExtResource("2_aat4d")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

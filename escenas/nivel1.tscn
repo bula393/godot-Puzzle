@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn14b3fkaw588" path="res://escenas/personajePrincipal.tscn" id="4_kkmol"]
 [ext_resource type="Script" uid="uid://b5yx1tn5u5y08" path="res://scripts/objeto.gd" id="5_orta5"]
 [ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="6_47yg7"]
+[ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="8_w1egi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iicca"]
 texture = ExtResource("3_w1egi")
@@ -32,6 +33,7 @@ position = Vector2(-1, 0)
 script = ExtResource("1_jjnph")
 
 [node name="FondoL" type="Sprite2D" parent="." unique_id=750945837]
+visible = false
 position = Vector2(582.5, 341.00003)
 scale = Vector2(3.8033335, 3.7619047)
 texture = ExtResource("2_w1egi")
@@ -95,3 +97,9 @@ texture = ExtResource("6_47yg7")
 position = Vector2(4, -7)
 scale = Vector2(0.65, 0.65)
 shape = SubResource("RectangleShape2D_bm00u")
+
+[node name="Control" parent="." unique_id=672239327 instance=ExtResource("8_w1egi")]
+offset_left = 71.0
+offset_top = 71.0
+offset_right = 71.0
+offset_bottom = 71.0

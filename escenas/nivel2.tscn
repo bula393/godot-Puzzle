@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="5_wtc5o"]
 [ext_resource type="PackedScene" uid="uid://c7wf5gtbe2pa6" path="res://escenas/puerta.tscn" id="6_wtc5o"]
 [ext_resource type="PackedScene" uid="uid://dpvjrkhyquo1q" path="res://escenas/palanca.tscn" id="7_4uxp8"]
+[ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="9_y8yvi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86ce0"]
 texture = ExtResource("1_7h3xd")
@@ -66,3 +67,9 @@ position = Vector2(321, 458)
 
 [node name="PALANCA" parent="." unique_id=1961857350 instance=ExtResource("7_4uxp8")]
 position = Vector2(0, -47)
+
+[node name="Control" parent="." unique_id=672239327 instance=ExtResource("9_y8yvi")]
+offset_left = 71.0
+offset_top = 71.0
+offset_right = 71.0
+offset_bottom = 71.0

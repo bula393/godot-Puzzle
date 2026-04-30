@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c7wf5gtbe2pa6" path="res://escenas/puerta.tscn" id="4_s5ixl"]
 [ext_resource type="PackedScene" uid="uid://dpvjrkhyquo1q" path="res://escenas/palanca.tscn" id="5_evt0n"]
 [ext_resource type="PackedScene" uid="uid://fyuf01qf6jy7" path="res://escenas/corriente.tscn" id="7_317x8"]
+[ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="9_vbirm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evt0n"]
 texture = ExtResource("1_vq7wq")
@@ -59,3 +60,9 @@ position = Vector2(-14, -283)
 
 [node name="Area2D" parent="." unique_id=1699721361 instance=ExtResource("7_317x8")]
 position = Vector2(359, 597)
+
+[node name="Control" parent="." unique_id=672239327 instance=ExtResource("9_vbirm")]
+offset_left = 71.0
+offset_top = 71.0
+offset_right = 71.0
+offset_bottom = 71.0
