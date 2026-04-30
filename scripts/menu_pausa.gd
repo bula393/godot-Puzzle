@@ -3,7 +3,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("se pauso")
 	get_tree().paused = true
 
 func despausar() -> void:

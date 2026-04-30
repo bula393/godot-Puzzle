@@ -2,8 +2,10 @@ extends Node
 
 var nivelDesbloquedo = 1
 var nivelActual = 1
+var menu_pausa_instancia
 
-
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func setNivelActual(nivel : int) -> void:
 	nivelActual = nivel
@@ -24,11 +26,13 @@ func getNivelSiguienteNivelDisponible() -> int:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pausa") :
-		if !has_node("res://escenas/menuPausa.tscn"):
+
+		if  not is_instance_valid(menu_pausa_instancia):
 			var pausa = preload("res://escenas/menuPausa.tscn")
-			add_child(pausa.instantiate())
+			menu_pausa_instancia = pausa.instantiate()
+			add_child(menu_pausa_instancia)
 		else :
-			get_tree().get_node("MenuPausa").despausar()
+			menu_pausa_instancia.despausar()
 		
 	
 		
