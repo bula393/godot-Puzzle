@@ -31,6 +31,7 @@ func _input(event: InputEvent) -> void:
 		if  not is_instance_valid(menu_pausa_instancia):
 			var pausa = preload("res://escenas/menuPausa.tscn")
 			menu_pausa_instancia = pausa.instantiate()
+			menu_pausa_instancia.z_index = 100
 			add_child(menu_pausa_instancia)
 		else :
 			menu_pausa_instancia.despausar()

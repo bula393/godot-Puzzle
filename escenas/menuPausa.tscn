@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dbw15x46mn3f2" path="res://scripts/menu_pausa.gd" id="1_0hy0w"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_0rvis"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hy0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rvis"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 0, 1)
 
 [node name="MenuPausa" type="Control" unique_id=1035074535]
 process_mode = 2
+process_priority = 20
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,8 +27,9 @@ size_flags_horizontal = 4
 script = ExtResource("1_0hy0w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=608191606]
+modulate = Color(0, 0, 0, 1)
 scale = Vector2(543, 259)
-texture = SubResource("CanvasTexture_0rvis")
+texture = SubResource("CanvasTexture_0hy0w")
 
 [node name="Button2" type="Button" parent="." unique_id=1442504673]
 layout_mode = 1
@@ -34,6 +44,10 @@ offset_right = 81.0
 offset_bottom = 77.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rvis")
 text = "RETURN MENU"
 
 [node name="Button" type="Button" parent="." unique_id=1252199643]
@@ -49,6 +63,10 @@ offset_right = 81.0
 offset_bottom = -7.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rvis")
 text = "RESUME"
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
