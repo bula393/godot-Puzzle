@@ -8,4 +8,5 @@ func setNivel(n : int)  -> void:
 	
 
 func _on_button_pressed() -> void:
+	Global.setNivelActual(nivel)
 	get_tree().change_scene_to_file(Global.getNivel(nivel)) 

@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func setNivelActual(nivel : int) -> void:
 	nivelActual = nivel
+	print(nivelActual)
 	
 	
 func getNivelSiguienteActual() -> int:

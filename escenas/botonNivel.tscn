@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cynn01vkhl4aw" path="res://scripts/boton_nivel.gd" id="1_f77ub"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f77ub"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 0, 1)
+
 [node name="BotonNivel" type="Control" unique_id=186630172]
 layout_mode = 3
 anchors_preset = 8
@@ -28,5 +36,9 @@ offset_right = 44.10853
 offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_f77ub")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

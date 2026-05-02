@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c3mi7jvkoy3vd"]
 
 [ext_resource type="Script" uid="uid://bxjd45buh48g8" path="res://scripts/inicio.gd" id="1_6iy57"]
+[ext_resource type="Texture2D" uid="uid://4fvv26r483m0" path="res://assets/fondoPI.jpg" id="2_70n0a"]
+[ext_resource type="Texture2D" uid="uid://c7tnj08qpm3lv" path="res://assets/logoStar.webp" id="3_wq2mj"]
+[ext_resource type="Texture2D" uid="uid://cp5o3f0k6iegq" path="res://assets/templo.png" id="4_ctupd"]
 
 [node name="Inicio" type="Control" unique_id=855701258]
 layout_mode = 3
@@ -15,6 +18,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_6iy57")
 
+[node name="FondoPi" type="Sprite2D" parent="." unique_id=1222959072]
+position = Vector2(-3.0517578e-05, 2.499978)
+scale = Vector2(3.8266668, 3.8392856)
+texture = ExtResource("2_70n0a")
+
 [node name="Button3" type="Button" parent="." unique_id=1972528412]
 layout_mode = 1
 anchors_preset = 8
@@ -22,14 +30,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -155.5
-offset_right = 139.0
-offset_bottom = -96.5
+offset_left = -505.0
+offset_top = -203.0
+offset_right = -227.0
+offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 52
 text = "JUGAR"
+flat = true
 
 [node name="Button2" type="Button" parent="." unique_id=366611151]
 layout_mode = 1
@@ -38,14 +50,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = 10.5
-offset_right = 139.0
-offset_bottom = 69.5
+offset_left = -509.0
+offset_top = 80.0
+offset_right = -231.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 52
 text = "SALIR"
+flat = true
 
 [node name="Button" type="Button" parent="." unique_id=664097710]
 layout_mode = 1
@@ -54,14 +70,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -71.5
-offset_right = 139.0
-offset_bottom = -12.5
+offset_left = -508.0
+offset_top = -53.0
+offset_right = -230.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 52
 text = "NIVELES"
+flat = true
+
+[node name="LogoStar" type="Sprite2D" parent="." unique_id=550174450]
+position = Vector2(218, -18)
+scale = Vector2(0.36527777, 0.36527777)
+texture = ExtResource("3_wq2mj")
+
+[node name="Templo" type="Sprite2D" parent="." unique_id=980740677]
+position = Vector2(220, 173)
+scale = Vector2(0.26707312, 0.26707312)
+texture = ExtResource("4_ctupd")
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

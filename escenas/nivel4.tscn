@@ -17,6 +17,7 @@ texture = ExtResource("1_b01l2")
 
 [sub_resource type="TileSet" id="TileSet_ajyma"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_lqpg4")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ayln8"]

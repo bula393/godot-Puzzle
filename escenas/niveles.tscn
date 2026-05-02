@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bomk2qxe4j1yg"]
 
 [ext_resource type="Script" uid="uid://dm8bsplodqgvu" path="res://scripts/niveles.gd" id="1_n0pam"]
+[ext_resource type="Texture2D" uid="uid://4fvv26r483m0" path="res://assets/fondoPI.jpg" id="2_l655b"]
+[ext_resource type="Texture2D" uid="uid://c7tnj08qpm3lv" path="res://assets/logoStar.webp" id="3_62ehh"]
+[ext_resource type="Texture2D" uid="uid://cp5o3f0k6iegq" path="res://assets/templo.png" id="4_73bos"]
 
 [node name="Control" type="Control" unique_id=1103983354]
 layout_mode = 3
@@ -14,6 +17,11 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_n0pam")
 
+[node name="FondoPi" type="Sprite2D" parent="." unique_id=549975079]
+position = Vector2(0, 2.4999695)
+scale = Vector2(3.8266668, 3.8392856)
+texture = ExtResource("2_l655b")
+
 [node name="GridContainer" type="GridContainer" parent="." unique_id=976010201]
 layout_mode = 0
 offset_left = -466.0
@@ -23,3 +31,13 @@ offset_bottom = -165.0
 theme_override_constants/h_separation = 200
 theme_override_constants/v_separation = 200
 columns = 4
+
+[node name="LogoStar" type="Sprite2D" parent="." unique_id=1961222072]
+position = Vector2(218, -13)
+scale = Vector2(0.36527777, 0.36527777)
+texture = ExtResource("3_62ehh")
+
+[node name="Templo" type="Sprite2D" parent="." unique_id=349505162]
+position = Vector2(220, 178)
+scale = Vector2(0.26707312, 0.26707312)
+texture = ExtResource("4_73bos")
