@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxhxnepq7m2f1"
-path="res://.godot/imported/bloques.jpg-2f54acd5693bd7fc12e251e5c086ec39.ctex"
+uid="uid://d37te7v1te37y"
+path="res://.godot/imported/bloquesUnidosA.png-044b34d027d6ebcf5e485a1d3c852741.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bloques.jpg"
-dest_files=["res://.godot/imported/bloques.jpg-2f54acd5693bd7fc12e251e5c086ec39.ctex"]
+source_file="res://assets/bloquesUnidosA.png"
+dest_files=["res://.godot/imported/bloquesUnidosA.png-044b34d027d6ebcf5e485a1d3c852741.ctex"]
 
 [params]
 

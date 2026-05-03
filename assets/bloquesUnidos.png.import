@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y8sg5vsfft7"
-path="res://.godot/imported/pixil-frame-0.png-0a2d8a803221ea592f483da0e0c43a31.ctex"
+uid="uid://c87gamk713v7k"
+path="res://.godot/imported/bloquesUnidos.png-2857952803e777a5146ad5bb6a2d0ae4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-0a2d8a803221ea592f483da0e0c43a31.ctex"]
+source_file="res://assets/bloquesUnidos.png"
+dest_files=["res://.godot/imported/bloquesUnidos.png-2857952803e777a5146ad5bb6a2d0ae4.ctex"]
 
 [params]
 

@@ -26,7 +26,7 @@ func getNivelSiguienteNivelDisponible() -> int:
 	
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pausa") :
+	if event.is_action_pressed("pausa") and (get_tree().current_scene.scene_file_path != "res://escenas/Inicio.tscn" and get_tree().current_scene.scene_file_path != "res://escenas/niveles.tscn") :
 
 		if  not is_instance_valid(menu_pausa_instancia):
 			var pausa = preload("res://escenas/menuPausa.tscn")
