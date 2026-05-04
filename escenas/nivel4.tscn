@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bqkw520f5ekh6" path="res://escenas/muro.tscn" id="6_urj1t"]
 [ext_resource type="PackedScene" uid="uid://dwakkpww5gdmo" path="res://escenas/bomb.tscn" id="7_cepkt"]
 [ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="9_u660k"]
+[ext_resource type="Texture2D" uid="uid://drc4manrpr0ae" path="res://assets/yoda.png" id="12_ajyma"]
+[ext_resource type="Texture2D" uid="uid://0hmrj44axr77" path="res://assets/burbujaDialogo.png" id="13_ayln8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pb6ql"]
 texture = ExtResource("3_ajyma")
@@ -55,6 +57,9 @@ load_path = "res://.godot/imported/an-8-bit-retro-styled-pixel-art-illustration-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cepkt"]
 size = Vector2(151.42862, 340.7143)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb6ql"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Nivel4" type="Node2D" unique_id=2089165218]
 
@@ -145,6 +150,33 @@ offset_left = 71.0
 offset_top = 71.0
 offset_right = 71.0
 offset_bottom = 71.0
+
+[node name="Yoda" type="Sprite2D" parent="." unique_id=1787748505]
+position = Vector2(458.5, 291)
+texture = ExtResource("12_ajyma")
+
+[node name="BurbujaDialogo" type="Sprite2D" parent="." unique_id=818158736]
+position = Vector2(604, 207.5)
+scale = Vector2(0.6015626, 0.45898435)
+texture = ExtResource("13_ayln8")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1196424863]
+offset_left = 504.0
+offset_top = 135.0
+offset_right = 861.0
+offset_bottom = 274.73593
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_pb6ql")
+text = "Agarrar la bomba con la
+ Fuerza debes, para la pared 
+romper. Hacia el objetivo, la 
+tecla H presionarás, y la 
+bomba entonces dispararás."
 
 [editable path="Area2D2"]
 [editable path="CharacterBody2D4"]

@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c7wf5gtbe2pa6" path="res://escenas/puerta.tscn" id="6_wtc5o"]
 [ext_resource type="PackedScene" uid="uid://dpvjrkhyquo1q" path="res://escenas/palanca.tscn" id="7_4uxp8"]
 [ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="9_y8yvi"]
+[ext_resource type="Texture2D" uid="uid://drc4manrpr0ae" path="res://assets/yoda.png" id="11_4xigu"]
+[ext_resource type="Texture2D" uid="uid://0hmrj44axr77" path="res://assets/burbujaDialogo.png" id="12_h7mt2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cg5ca"]
 texture = ExtResource("3_4xigu")
@@ -33,6 +35,9 @@ sources/3 = SubResource("TileSetAtlasSource_0l8vp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57bpn"]
 size = Vector2(54, 92)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg5ca"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Nivel2" type="Node2D" unique_id=436286450]
 
@@ -80,3 +85,28 @@ offset_left = 71.0
 offset_top = 71.0
 offset_right = 71.0
 offset_bottom = 71.0
+
+[node name="Yoda" type="Sprite2D" parent="." unique_id=1080442620]
+position = Vector2(333.5, 275.5047)
+texture = ExtResource("11_4xigu")
+
+[node name="BurbujaDialogo" type="Sprite2D" parent="." unique_id=856598020]
+position = Vector2(469.25003, 193.46832)
+scale = Vector2(0.56152344, 0.38101968)
+texture = ExtResource("12_h7mt2")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1141595869]
+offset_left = 377.0
+offset_top = 144.0
+offset_right = 734.0
+offset_bottom = 283.73593
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_cg5ca")
+text = "La palanca con 
+la Fuerza empujar debes, 
+si la barrera abrir tú deseas"

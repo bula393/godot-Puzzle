@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 		if activar:	
 			disparado = true
 			activar = false
-			velocity.x = 100 * get_parent().get_node("personajePrincipal").getDir()
+			velocity.x = 200 * get_parent().get_node("personajePrincipal").getDir()
 			get_parent().get_node("personajePrincipal").disparar()
 	
 

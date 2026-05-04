@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c1p4srp7lhgk4"]
+
+[ext_resource type="Script" uid="uid://d2brnmydeghfy" path="res://scripts/victoria.gd" id="1_wnkck"]
+[ext_resource type="Texture2D" uid="uid://dmveu3l6s81av" path="res://assets/fV.png" id="2_uongy"]
+[ext_resource type="Texture2D" uid="uid://vt7cqnrkv3sm" path="res://assets/quieto.png" id="3_6iuum"]
+[ext_resource type="Texture2D" uid="uid://drc4manrpr0ae" path="res://assets/yoda.png" id="4_vafmi"]
+[ext_resource type="Texture2D" uid="uid://0hmrj44axr77" path="res://assets/burbujaDialogo.png" id="5_sjqsx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewg4t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6wg3"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 0, 1)
+
+[node name="Victoria" type="Node2D" unique_id=1766232530]
+script = ExtResource("1_wnkck")
+
+[node name="FV" type="Sprite2D" parent="." unique_id=784144506]
+position = Vector2(577.5, 325.5)
+scale = Vector2(0.81747156, 0.83463544)
+texture = ExtResource("2_uongy")
+
+[node name="Quieto" type="Sprite2D" parent="." unique_id=1233701865]
+position = Vector2(604.5, 496.55)
+scale = Vector2(0.35, 0.35000002)
+texture = ExtResource("3_6iuum")
+
+[node name="Yoda" type="Sprite2D" parent="." unique_id=92884112]
+position = Vector2(212.99998, 219.99998)
+scale = Vector2(0.81747156, 0.83463544)
+texture = ExtResource("4_vafmi")
+
+[node name="BurbujaDialogo" type="Sprite2D" parent="." unique_id=2126844426]
+position = Vector2(417.9914, 136.06966)
+scale = Vector2(0.8632477, 0.3830846)
+texture = ExtResource("5_sjqsx")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1677803624]
+offset_left = 263.0
+offset_top = 91.0
+offset_right = 666.0
+offset_bottom = 230.73593
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewg4t")
+text = "Victoria grande, esta es. El camino la Fuerza ha 
+despejado, y hacia la libertad, la nave ahora vuela. 
+El futuro brillante, una vez más, yo veo."
+
+[node name="Button" type="Button" parent="." unique_id=1293271706]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 665.0
+offset_top = 86.0
+offset_right = 1086.2
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_w6wg3")
+text = "VOLVER AL MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

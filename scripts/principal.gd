@@ -115,7 +115,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 		print(p)
 		get_tree().change_scene_to_file(p)
 	else :
-		print("estas en el ultimo nivel")
+		get_tree().change_scene_to_file("res://escenas/victoria.tscn")
 
 
 	

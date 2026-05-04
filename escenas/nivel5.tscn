@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dwakkpww5gdmo" path="res://escenas/bomb.tscn" id="9_rxnhs"]
 [ext_resource type="PackedScene" uid="uid://bqkw520f5ekh6" path="res://escenas/muro.tscn" id="10_gf6cw"]
 [ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="11_ytb5y"]
+[ext_resource type="Texture2D" uid="uid://drc4manrpr0ae" path="res://assets/yoda.png" id="14_5hh40"]
+[ext_resource type="Texture2D" uid="uid://0hmrj44axr77" path="res://assets/burbujaDialogo.png" id="15_r1ao3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a5o2c"]
 texture = ExtResource("3_5hh40")
@@ -41,6 +43,9 @@ size = Vector2(151.42862, 154.2856)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b478"]
 size = Vector2(96, 396)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5o2c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Nivel5" type="Node2D" unique_id=1650337211]
 
@@ -152,6 +157,32 @@ offset_left = 71.0
 offset_top = 71.0
 offset_right = 71.0
 offset_bottom = 71.0
+
+[node name="Yoda" type="Sprite2D" parent="." unique_id=1415206269]
+position = Vector2(809.5, 139)
+texture = ExtResource("14_5hh40")
+
+[node name="BurbujaDialogo" type="Sprite2D" parent="." unique_id=1517685214]
+position = Vector2(949.5, 87.991264)
+scale = Vector2(0.5800781, 0.33206522)
+texture = ExtResource("15_r1ao3")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1883260468]
+offset_left = 847.0
+offset_top = 38.0
+offset_right = 1094.1428
+offset_bottom = 134.73593
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5o2c")
+text = "Tu destino en tus manos está.
+. Para la libertad alcanzar, de 
+tu entrenamiento valerte tú 
+tendrás."
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://8s8qlvl2ptk7" path="res://assets/an-8-bit-retro-styled-pixel-art-illustration-of-a-stone-rock-free-png.webp" id="6_47yg7"]
 [ext_resource type="Texture2D" uid="uid://d37te7v1te37y" path="res://assets/bloquesUnidosA.png" id="7_fxtjo"]
 [ext_resource type="PackedScene" uid="uid://dcr4gjdy8hr6h" path="res://escenas/botonReinicio.tscn" id="8_w1egi"]
+[ext_resource type="Texture2D" uid="uid://drc4manrpr0ae" path="res://assets/yoda.png" id="10_47yg7"]
+[ext_resource type="Texture2D" uid="uid://0hmrj44axr77" path="res://assets/burbujaDialogo.png" id="11_2iqcv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oicwc"]
 texture = ExtResource("6_2iqcv")
@@ -39,6 +41,9 @@ size = Vector2(138, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bm00u"]
 size = Vector2(150.76921, 113.84613)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxtjo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="game" type="Node2D" unique_id=1229528155]
 position = Vector2(-1, 0)
@@ -114,3 +119,30 @@ offset_left = 71.0
 offset_top = 71.0
 offset_right = 71.0
 offset_bottom = 71.0
+
+[node name="Yoda" type="Sprite2D" parent="." unique_id=946046597]
+position = Vector2(345, 243)
+texture = ExtResource("10_47yg7")
+
+[node name="BurbujaDialogo" type="Sprite2D" parent="." unique_id=1513781331]
+position = Vector2(629, 143.99998)
+scale = Vector2(1.140625, 0.44728392)
+texture = ExtResource("11_2iqcv")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=162488365]
+offset_left = 469.0
+offset_top = 69.0
+offset_right = 826.0
+offset_bottom = 208.73593
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_fxtjo")
+text = "Usar la Fuerza debes, si el
+camino despejar quieres.
+ Escucha bien, joven aprendiz:
+-Con la tecla O, hacia ti los objetos atraerás.
+-Con la tecla P, lejos de ti los objetos repelerás."
